@@ -17,7 +17,20 @@ describe('AdminComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it ('should create the app', () => {
+    const fixture = TestBed.createComponent (AdminComponent);
+    const app = fixture. componentInstance;
+    expect(app).toBeTruthy();
   });
+
+  it( "should have as values", () => {
+    const fixture = TestBed. createComponent (AdminComponent);
+    const app = fixture. componentInstance;
+    expect (app.minValue).toBeGreaterThanOrEqual(0);
+    expect (app.averageValue).toBeLessThanOrEqual(app.maxValue);
+    expect (app.averageValue).toBeGreaterThanOrEqual(app.minValue);
+    
+  });
+
+
 });
